@@ -55,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .form-control {
             background-color: #ffffff; /* White background for form inputs */
             color:#e9e9e9 /* Ash color for form input text */
-            margin-bottom: 15px;
-            border-radius: 20px;
+            margin-bottom #007bff: 15px;
+            border-radius #007bff: 20px;
         }
         .btn-primary {
             background-color: #007bff; /* Blue color for the submit button */

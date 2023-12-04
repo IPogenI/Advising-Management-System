@@ -1,0 +1,22 @@
+create table Department(
+D_id varchar(5) not null, 
+D_title varchar(40),
+primary key (D_id));
+
+insert into Department values 
+('CSE','Computer Science and Engineering'), 
+('CS','Computer Science'),
+('EEE','Electrical and Electronics Engineering'), 
+('CEE','Civil and Environmental Engineering'),
+('BBA','Bachelor of Business Administration'),
+('LLB','Bachelor of Legislative Law');
+
+
+create table Student(
+Student_id varchar(8) not null, 
+Student_name varchar(20) not null, 
+student_mail varchar(30) not null, 
+Student_department varchar(5) not null,
+Advsisng_status char(1),
+primary key (Student_id),
+foreign key (student_department) references Department(D_id));

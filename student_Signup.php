@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+</head>
+<body>
+      <div class="container">
+        <div class="box form-box">
+
+        <?php 
+         
+         $con = mysqli_connect("localhost","root","","advising-management-system") or die("Couldn't connect");
+         if(isset($_POST['submit'])){
+            $Student_id = $_POST['Student_id'];
+            $Student_name = $_POST['Student_name'];
+            $student_mail = $_POST['student_mail'];
+            $Student_department = $_POST['Student_department'];
+            $password = $_POST['password'];
+
+      
+
+         $s_query = mysqli_query($con,"SELECT Student_id FROM student WHERE Student_id='$Student_id'");
+
+         if(mysqli_num_rows($s_query) !=0 ){
+            echo "<div class='message'>
+                      <p>You are already registered!</p>
+                  </div> <br>";
+            echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
+         }
+         else{
+
+            mysqli_query($con,"INSERT INTO student(Student_id,Student_name,student_mail,Student_department,password) VALUES('$Student_id','$Student_name','$student_mail','$Student_department', '$password')") or die("Erroe Occured");
+
+            echo "<div class='message'>
+                      <p>Registration successfully!</p>
+                  </div> <br>";
+            echo "<a href='index.php'><button class='btn'>Login Now</button>";
+         
+
+         }
+
+         }else{
+         
+        ?>
+
+            <header>Sign Up</header>
+            <form action="" method="post">
+                <div class="field input">
+                    <label for="Student_id">ID</label>
+                    <input type="number" name="Student_id" id="Student_id" autocomplete="off" required>
+                </div>
+
+                <div class="field input">
+                    <label for="Student_name">Name</label>
+                    <input type="text" name="Student_name" id="Student_name" autocomplete="off" required>
+                </div>
+
+                <div class="field input">
+                    <label for="student_mail">Email</label>
+                    <input type="text" name="student_mail" id="student_mail" autocomplete="off" required>
+                </div>
+
+                <div class="field input">
+                    <label for="Student_department">Department</label>
+                    <input type="text" name="Student_department" id="Student_department" autocomplete="off" required>
+                </div>
+                <div>
+
+                // can't figure out how to show it in selection
+                //trying to show that we are pulling department from within the database
+
+                <select></select>
+
+                <?php 
+
+                $Dept_row = mysqli_query($con,"select D_id from department order by D_id") or die("");
+                $Dept_a  = array();
+                
+                while($row = mysqli_fetch_array($Dept_row)){
+                    $Dept_a[] = $row;
+                }
+                $Dept_list = array();
+                $Dept_list[] = '-NULL-';
+                foreach($Dept_a as $dept){
+                    $Dept_list[] = $dept[0];
+                }
+
+                echo "<select>";
+                foreach( $Dept_list as $dept ){
+                    echo "<option value =$dept>$dept</option>";
+                }
+                echo "</select>";
+
+                ?>
+                
+                </div>
+
+
+
+                <div class="field input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" autocomplete="off" required>
+                </div>
+
+                <div class="field">
+                    
+                    <input type="submit" class="btn" name="submit" value="Register" required>
+                </div>
+                <div class="links">
+                    Already a member? <a href="index.php">Log In</a>
+                </div>
+            </form>
+        </div>
+        <?php } ?>
+      </div>
+</body>
+</html>

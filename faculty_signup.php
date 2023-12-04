@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "username";
+    $password = "password";
     $dbname = "advising";
 
     // Create connection
@@ -13,14 +13,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO faculty VALUES ('".$_POST["faculty_id"]."', '".$_POST["first_name"]."', '".$_POST["middle_name"]."', '".$_POST["last_name"]."', '".$_POST["email"]."', '".$_POST["department"]."', '".$_POST["password"]."')";
+    // Check if faculty ID already exists
+    $sql = "SELECT * FROM faculty WHERE facultyId='".$_POST["facultyId"]."'";
+    $result = $conn->query($sql);
 
-    if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
-      header("Location: index.php");
-    } else {
-      echo "Error: ";
+    if ($result->num_rows > 0) {
+      echo "Faculty ID already exists.";
+      // Redirect to faculty_signup page
       header("Location: faculty_signup.php");
+    } else {
+      $sql = "INSERT INTO faculty VALUES ('".$_POST["facultyId"]."', '".$_POST["firstName"]."', '".$_POST["middleName"]."', '".$_POST["lastName"]."', '".$_POST["email"]."', '".$_POST["department"]."', '".$_POST["password"]."')";
+
+      if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+        // Redirect to faculty_login page
+        header("Location: faculty_login.php");
+      } else {
+        echo "Error. User already exists: " . $sql . "<br>" . $conn->error;
+        // Redirect to faculty_signup page
+        header("Location: faculty_signup.php");
+      }
     }
 
     $conn->close();

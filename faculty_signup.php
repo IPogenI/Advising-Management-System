@@ -7,7 +7,7 @@
     </style>
 </head>
 <body>
-    <form id="facultyForm" method="post" action="fdata_insert.php">
+    <form id="facultyForm" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <label for="faculty_id">Faculty ID:</label><br>
         <input type="text" id="faculty_id" name="faculty_id" required><br>
         <label for="first_name">First Name:</label><br>
@@ -30,3 +30,31 @@
 </body>
 </html>
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "advising";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO faculty (faculty_id, first_name, middle_name, last_name, email, department, password)
+    VALUES ('".$_POST["faculty_id"]."', '".$_POST["first_name"]."', '".$_POST["middle_name"]."', '".$_POST["last_name"]."', '".$_POST["email"]."', '".$_POST["department"]."', '".$_POST["password"]."')";
+
+    if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+      header("location: success.php");
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+}
+?>

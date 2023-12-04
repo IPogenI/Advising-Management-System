@@ -4,12 +4,12 @@ include 'partial/_DBconnect.php'; ?>
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //here we are connecting the database through the _DBconnect file
-    $stId = $_POST["stId"];
+    $stId = $_POST["student_id"];
     $password = $_POST["password"];
     $email = $_POST["email"];
 
     //sql query here table name: students // modify as per needed 
-    $sql = "SELECT * FROM studentlogininfo WHERE stId='$stId' AND password='$password' AND email='$email'";
+    $sql = "SELECT * FROM studentlogininfo WHERE student_id='$stId' AND password='$password' AND email='$email'";
 
     $result = mysqli_query($conn, $sql);
 
@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="stId" name="stId" placeholder="Student ID">
+                    <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Student ID">
                 </div>
                 <div class="mb-3">
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email">

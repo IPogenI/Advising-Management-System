@@ -1,27 +1,31 @@
-
 <?php
+include 'partial/_DBconnect.php'; ?>
+<?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'partial/_DBconnect.php';
-    //here we are connecting the database through the _DBconnect file 
-    $user_name = $_POST["student_id"];
+    //here we are connecting the database through the _DBconnect file
+    $stId = $_POST["stId"];
     $password = $_POST["password"];
     $email = $_POST["email"];
 
     //sql query here table name: students // modify as per needed 
-    $sql = "SELECT * FROM students WHERE student_id='$user_name' AND password='$password' AND email='$email'";
+    $sql = "SELECT * FROM studentlogininfo WHERE stId='$stId' AND password='$password' AND email='$email'";
+
     $result = mysqli_query($conn, $sql);
-    
+
     if (mysqli_num_rows($result) == 1) {
-        //checking whether only one row exits or not 
+        //checking whether only one row exists or not
         // Login successful
-        session_start();
-        $_SESSION['loggedin'] = true;
-        $_SESSION['student_id'] = $user_name;
-        header("location: student_dashboard.php");
+//        session_start();
+//        $_SESSION['loggedin'] = true;
+//        $_SESSION['id'] = $stId;
+//        header("location: student_dashboard.php");
+        echo "YES!";
         // add the location of the page where u want this page to redirect if login is a success; modify the header as per need 
         exit();
     } else {
         $loginError = "Invalid credentials. Please try again.";
+        echo "NO!";
     }
 } 
 ?>
@@ -75,8 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php
             //error handling
             if (isset($loginError)) {
-                echo '
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                echo
+                    '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                         <strong>Error!</strong> ' . $loginError . '
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -85,9 +89,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             ?>
 
-            <form action="/project370/Advising-Management-System/student_login.php" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Student ID">
+                    <input type="text" class="form-control" id="stId" name="stId" placeholder="Student ID">
                 </div>
                 <div class="mb-3">
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email">

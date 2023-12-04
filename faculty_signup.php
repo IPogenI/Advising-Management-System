@@ -3,7 +3,6 @@
 <head>
     <title>Faculty Form</title>
     <style>
-        /* Add your CSS here */
     </style>
 </head>
 <body>
@@ -25,7 +24,6 @@
         <input type="submit" value="Submit">
     </form>
     <script>
-        // Add your JavaScript here
     </script>
 </body>
 </html>

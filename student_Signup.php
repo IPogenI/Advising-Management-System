@@ -13,7 +13,7 @@
 
         <?php 
          
-         $con = mysqli_connect("localhost","root","","advising-management-system") or die("Couldn't connect");
+         $con = mysqli_connect("localhost","root","","advising") or die("Couldn't connect");
          if(isset($_POST['submit'])){
             $Student_id = $_POST['Student_id'];
             $Student_name = $_POST['Student_name'];

@@ -15,10 +15,10 @@
          
          $con = mysqli_connect("localhost","root","","advising") or die("Couldn't connect");
          if(isset($_POST['submit'])){
-            $Student_id = $_POST['Student_id'];
-            $Student_name = $_POST['Student_name'];
-            $student_mail = $_POST['student_mail'];
-            $Student_department = $_POST['Student_department'];
+            $Student_id = $_POST['student_id'];
+            $Student_name = $_POST['student_name'];
+            $student_mail = $_POST['email'];
+            $Student_department = $_POST['department'];
             $password = $_POST['password'];
 
       
@@ -51,17 +51,17 @@
             <form action="" method="post">
                 <div class="field input">
                     <label for="Student_id">ID</label>
-                    <input type="number" name="Student_id" id="Student_id" autocomplete="off" required>
+                    <input type="number" name="Student_id" id="student_id" autocomplete="off" required>
                 </div>
 
                 <div class="field input">
                     <label for="Student_name">Name</label>
-                    <input type="text" name="Student_name" id="Student_name" autocomplete="off" required>
+                    <input type="text" name="Student_name" id="student_name" autocomplete="off" required>
                 </div>
 
                 <div class="field input">
                     <label for="student_mail">Email</label>
-                    <input type="text" name="student_mail" id="student_mail" autocomplete="off" required>
+                    <input type="text" name="student_mail" id="email" autocomplete="off" required>
                 </div>
 
 

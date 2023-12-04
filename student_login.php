@@ -3,12 +3,12 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'partial/_DBconnect.php';
     //here we are connecting the database through the _DBconnect file 
-    $user_name = $_POST["user_name"];
+    $user_name = $_POST["student_id"];
     $password = $_POST["password"];
     $email = $_POST["email"];
 
     //sql query here table name: students // modify as per needed 
-    $sql = "SELECT * FROM students WHERE user_name='$user_name' AND password='$password' AND email='$email'";
+    $sql = "SELECT * FROM students WHERE student_id='$user_name' AND password='$password' AND email='$email'";
     $result = mysqli_query($conn, $sql);
     
     if (mysqli_num_rows($result) == 1) {
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Login successful
         session_start();
         $_SESSION['loggedin'] = true;
-        $_SESSION['user_name'] = $user_name;
+        $_SESSION['student_id'] = $user_name;
         header("location: student_dashboard.php");
         // add the location of the page where u want this page to redirect if login is a success; modify the header as per need 
         exit();
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <form action="/project370/Advising-Management-System/student_login.php" method="post">
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="username" name="user_name" placeholder="Student ID">
+                    <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Student ID">
                 </div>
                 <div class="mb-3">
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email">

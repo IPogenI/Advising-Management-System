@@ -33,7 +33,7 @@
          }
          else{
 
-            mysqli_query($con,"INSERT INTO student(Student_id,Student_name,student_mail,Student_department,password) VALUES('$Student_id','$Student_name','$student_mail','$Student_department', '$password')") or die("Erroe Occured");
+            mysqli_query($con,"INSERT INTO student(Student_id,Student_name,student_mail,Student_department,s_password) VALUES('$Student_id','$Student_name','$student_mail','$Student_department', '$password')") or die("Erroe Occured");
 
             echo "<div class='message'>
                       <p>Registration successfully!</p>
@@ -64,39 +64,20 @@
                     <input type="text" name="student_mail" id="student_mail" autocomplete="off" required>
                 </div>
 
-                <div class="field input">
-                    <label for="Student_department">Department</label>
-                    <input type="text" name="Student_department" id="Student_department" autocomplete="off" required>
-                </div>
+
                 <div>
 
-                // can't figure out how to show it in selection
-                //trying to show that we are pulling department from within the database
 
-                <select></select>
+                <select name ="Student_department">
+                    <label for="Student_department">Department</label>
+                    <?php 
+                        $dept = mysqli_query($con,"select * from department order by D_id");
+                        while($dpt = mysqli_fetch_array($dept)){
+                    ?>
+                    <option value= "<?php echo $dpt['D_id'] ?>"><?php echo $dpt['D_id'] ?></option>
+                    <?php } ?>
+                </select>
 
-                <?php 
-
-                $Dept_row = mysqli_query($con,"select D_id from department order by D_id") or die("");
-                $Dept_a  = array();
-                
-                while($row = mysqli_fetch_array($Dept_row)){
-                    $Dept_a[] = $row;
-                }
-                $Dept_list = array();
-                $Dept_list[] = '-NULL-';
-                foreach($Dept_a as $dept){
-                    $Dept_list[] = $dept[0];
-                }
-
-                echo "<select>";
-                foreach( $Dept_list as $dept ){
-                    echo "<option value =$dept>$dept</option>";
-                }
-                echo "</select>";
-
-                ?>
-                
                 </div>
 
 
@@ -112,6 +93,9 @@
                 </div>
                 <div class="links">
                     Already a member? <a href="index.php">Log In</a>
+                </div>
+                <div class="links">
+                    Forgot Password? <a href="reset.php">Reset Password</a>
                 </div>
             </form>
         </div>

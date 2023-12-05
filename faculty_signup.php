@@ -9,7 +9,7 @@
 <body>
     <form id="facultyForm" method="post" action="fdata_insert.php">
         <label for="faculty_id">Faculty ID:</label><br>
-        <input type="text" id="faculty_id" name="facId" required><br>
+        <input type="text" id="faculty_id" name="faculty_id" required><br>
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br>
         <!-- <label for="first_name">First Name:</label><br>

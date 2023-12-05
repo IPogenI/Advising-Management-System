@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "advising";
+    $dbname = "advisingmanagement";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Redirect to faculty_signup page
       header("Location: faculty_signup.php");
     } else {
-      $sql = "INSERT INTO faculty VALUES ('".$_POST["faculty_id"]."', '".$_POST["first_name"]."', '".$_POST["middle_name"]."', '".$_POST["last_name"]."', '".$_POST["email"]."', '".$_POST["department"]."', '".$_POST["password"]."')";
+      $sql = "INSERT INTO faculty VALUES ('".$_POST["faculty_id"]."', '".$_POST["name"]."', '".$_POST["email"]."', '".$_POST["department"]."', '".$_POST["password"]."')";
 
       if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";

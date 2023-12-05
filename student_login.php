@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
 
     //sql query here table name: students // modify as per needed 
-    $sql = "SELECT * FROM studentlogininfo WHERE student_id='$stId' AND password='$password' AND email='$email'";
+    $sql = "SELECT * FROM studentlogininfo WHERE stId='$stId' AND password='$password' AND email='$email'";
 
     $result = mysqli_query($conn, $sql);
 
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Student login</title>
+    <title>Student Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>

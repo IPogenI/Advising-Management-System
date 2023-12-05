@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Faculty Form</title>
+    <title>Faculty SignUp</title>
     <style>
         /* Add your CSS here */
     </style>

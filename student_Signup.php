@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Register</title>
+    <title>Student SignUp</title>
 </head>
 <body>
       <div class="container">
@@ -47,21 +47,21 @@
          
         ?>
 
-            <header>Sign Up</header>
+            <header>Student SignUp</header>
             <form action="" method="post">
                 <div class="field input">
-                    <label for="Student_id">ID</label>
-                    <input type="text" name="stId" id="student_id" autocomplete="off" required>
+                    <!-- <label for="Student_id">Enter Student ID</label> -->
+                    <input type="text" name="stId" id="student_id" autocomplete="off" placeholder="Student ID" required>
                 </div>
 
                 <div class="field input">
-                    <label for="Student_name">Name</label>
-                    <input type="text" name="name" id="student_name" autocomplete="off" required>
+                    <!-- <label for="Student_name">Enter Student Name</label> -->
+                    <input type="text" name="name" id="student_name" autocomplete="off" placeholder="Name" required>
                 </div>
 
                 <div class="field input">
-                    <label for="student_mail">Email</label>
-                    <input type="text" name="email" id="email" autocomplete="off" required>
+                    <!-- <label for="student_mail">Enter Email</label> -->
+                    <input type="text" name="email" id="email" autocomplete="off" placeholder="Email" required>
                 </div>
 
                 <!--
@@ -84,8 +84,8 @@
 
 
                 <div class="field input">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" autocomplete="off" required>
+                    <!-- <label for="password">Enter Password</label> -->
+                    <input type="password" name="password" id="password" autocomplete="off" placeholder="Password" required>
                 </div>
 
                 <div class="field">
@@ -94,9 +94,6 @@
                 </div>
                 <div class="links">
                     Already a member? <a href="./student_login.php">Log In</a>
-                </div>
-                <div class="links">
-                    Forgot Password? <a href="reset.php">Reset Password</a>
                 </div>
             </form>
         </div>

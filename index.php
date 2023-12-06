@@ -29,7 +29,7 @@ $courses = $stmt->fetchAll();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Courses</title>
+    <title>Course Advising</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *{
@@ -114,7 +114,10 @@ $courses = $stmt->fetchAll();
             <input type="submit" value="Search">
         </form>
         <div class="links">
-            <a href="student_advising.php">Advising</a>
+            <a href="student_Signup.php">For students</a>
+        </div>
+        <div class="links">
+            <a href="faculty_Signup.php">For Faculties</a>
         </div>
     </nav>
     <table>

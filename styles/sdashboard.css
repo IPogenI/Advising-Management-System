@@ -1,0 +1,23 @@
+body{
+    display: block;
+}
+
+.course_list, .selected_courses{
+    border: 2px solid black;
+}
+
+/* Styling Select Courses Section */
+select.form-control{
+    height: 20rem !important;
+}
+
+.btn-blue{
+    font-size: 1.1rem;
+    color: white;
+    border: none;
+    background-color: rgba(49, 92, 242, 71%);
+}
+
+.btn-blue:hover{
+    color: white;
+}

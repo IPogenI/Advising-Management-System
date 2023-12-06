@@ -114,7 +114,7 @@ $courses = $stmt->fetchAll();
             <input type="submit" value="Search">
         </form>
         <div class="links">
-            <a href="student_advising.php">Advising</a>
+            <a href="index.php">Advising</a>
         </div>
     </nav>
     <table>

@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Roboto', sans-serif !important;
+    letter-spacing: 0.05rem;
 }
 body{
     background: #e4e9f7;
@@ -23,6 +24,12 @@ body{
     box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
                 0 32px 64px -48px rgba(0,0,0,0.5);
 }
+
+form > .button{
+    width: fit-content;
+    margin: auto;
+}
+
 .form-box{
     width: 450px;
     margin: 0px 10px;
@@ -50,8 +57,9 @@ body{
     outline: none;
 }
 .btn{
-    height: 35px;
-    background: rgba(76,68,182,0.808);
+    width: fit-content;
+    height: 40px;
+    background: rgba(49, 92, 242, 71%) !important;
     border: 0;
     border-radius: 5px;
     color: #fff;
@@ -60,7 +68,6 @@ body{
     transition: all .3s;
     margin-top: 10px;
     padding: 0px 10px;
-    width:100%;
     text-align: center;
 
 

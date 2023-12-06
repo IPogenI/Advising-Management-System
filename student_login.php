@@ -1,5 +1,7 @@
 <?php
-include 'partial/_DBconnect.php'; ?>
+    include 'partial/_DBconnect.php';
+    include 'header.php'; 
+?>
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,18 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) == 1) {
-        //checking whether only one row exists or not
         // Login successful
-//        session_start();
-//        $_SESSION['loggedin'] = true;
-//        $_SESSION['id'] = $stId;
-//        header("location: student_dashboard.php");
-        echo "YES!";
-        // add the location of the page where u want this page to redirect if login is a success; modify the header as per need 
+       header("location: studentDashboard.php");
         exit();
     } else {
         $loginError = "Invalid credentials. Please try again.";
-        echo "NO!";
     }
 } 
 ?>

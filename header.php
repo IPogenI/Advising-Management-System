@@ -25,7 +25,12 @@
         <div class="collapse navbar-collapse justify-content-end mr-6" id="navbarSupportedContent">
             <ul class="navbar-nav mr-2">
                 <li class="nav-item active">
-                    <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="course_show.php">Courses</a>
                 </li>
             </ul>
             <ul class="navbar-nav mr-2">
@@ -35,8 +40,8 @@
                         SignUp
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Student</a>
-                        <a class="dropdown-item" href="#">Faculty</a>
+                        <a class="dropdown-item" href="student_signup.php">Student</a>
+                        <a class="dropdown-item" href="faculty_signup.php">Faculty</a>
                     </div>
                 </li>
             </ul>

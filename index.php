@@ -29,7 +29,7 @@ $courses = $stmt->fetchAll();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Courses</title>
+    <title>Course Advising</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *{

@@ -13,7 +13,7 @@
 
         <?php 
          
-         $con = mysqli_connect("localhost","root","","advisingManagement") or die("Couldn't connect");
+         $con = mysqli_connect("localhost","root","","advisingmanagement") or die("Couldn't connect");
          if(isset($_POST['submit'])){
             $Student_id = $_POST['stId'];
             $Student_name = $_POST['name'];
@@ -22,7 +22,7 @@
 
       
 
-         $s_query = mysqli_query($con,"SELECT stId FROM studentlogininfo WHERE stId='$Student_id'");
+         $s_query = mysqli_query($con,"SELECT student_id FROM student WHERE student_id='$Student_id'");
 
          if(mysqli_num_rows($s_query) !=0 ){
             echo "<div class='message'>
@@ -32,7 +32,7 @@
          }
          else{
 
-            mysqli_query($con,"INSERT INTO studentlogininfo(stId,name,email,password) VALUES('$Student_id','$Student_name','$student_mail', '$password')") or die("Erroe Occured");
+            mysqli_query($con,"INSERT INTO student(student_id, name, email, password) VALUES('$Student_id','$Student_name','$student_mail', '$password')") or die("Erroe Occured");
 
             echo "<div class='message'>
                       <p>Registration successfully!</p>

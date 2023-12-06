@@ -4,7 +4,7 @@
 $server="localhost";
 $username="root";
 $password="";
-$database="advisingManagement";
+$database="advisingmanagement";
 $conn = mysqli_connect($server, $username, $password, $database);
 
 //previously done this which gave error:

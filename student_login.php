@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
 
     //sql query here table name: students // modify as per needed 
-    $sql = "SELECT * FROM studentlogininfo WHERE stId='$stId' AND password='$password' AND email='$email'";
+    $sql = "SELECT * FROM student WHERE student_id='$stId' AND password='$password' AND email='$email'";
 
     $result = mysqli_query($conn, $sql);
 

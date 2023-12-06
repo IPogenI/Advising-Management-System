@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .container{
-            padding-top: 5rem;
+            padding-top: 7.5rem;
         }
 
         .login-container {
@@ -68,10 +68,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             /* border-radius #007bff: 20px; */
             padding: 1.3rem;
         }
-        .btn-primary {
-            background-color: #007bff; /* Blue color for the submit button */
+        .btn-blue {
+            display: flex;
+            align-self: center;
+            background: rgba(49, 92, 242, 71%) !important; /* Blue color for the submit button */
             color: #ffffff; /* White font for the submit button */
-            border-radius: 15px;
+            border-radius: 5px;
+            width: fit-content;
         }
     </style>
 </head>
@@ -105,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="mb-3">
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-blue">Submit</button>
             </form>
         </div>
     </div>

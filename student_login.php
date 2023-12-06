@@ -35,27 +35,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-        body {
-            background-color: #ffffff; /* White background for the body */
+        body {  
+            background: #e4e9f7; /* White background for the body */
         }
+
+        .container{
+            padding-top: 5rem;
+        }
+
         .login-container {
-            background-color: #e0e0e0; /* Light ash color for the login container */
+            background-color: #fff; /* Light ash color for the login container */
             border-radius: 8px;
             padding: 40px;
             margin: auto;
             margin-top: 100px; /* Adjust the top margin for centering */
-            width: 350px;
+            width: 450px;
             text-align: center;
+            min-height: 400px;
+            border-radius: 20px;
+            box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
         }
         .login-container h1 {
             color: #000000; /* Black font for "Student Login" */
             font-size: 25px;
+            margin-bottom: 1rem;
         }
         .form-control {
             background-color: #ffffff; /* White background for form inputs */
-            color:#e9e9e9 /* Ash color for form input text */
-            margin-bottom #007bff: 15px;
-            border-radius #007bff: 20px;
+            color:#e9e9e9; /* Ash color for form input text */
+            /* margin-bottom #007bff: 15px; */
+            /* border-radius #007bff: 20px; */
+            padding: 1.3rem;
         }
         .btn-primary {
             background-color: #007bff; /* Blue color for the submit button */
@@ -84,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             ?>
 
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+            <form class="d-flex flex-column justify-content-center" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <div class="mb-3">
                     <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Student ID">
                 </div>

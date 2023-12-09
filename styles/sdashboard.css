@@ -21,3 +21,15 @@ select.form-control{
 .btn-blue:hover{
     color: white;
 }
+
+/* Styling Routine Section*/
+.advising_panel2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.routine{
+    /*  */
+}

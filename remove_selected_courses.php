@@ -36,10 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 
                 
                 if(mysqli_num_rows($result) == 1){
-                    $insertSql = "INSERT INTO courses(course_id, course_title, course_credit, lab, course_faculty, section) 
-                    VALUES ('$courseId', '$courseTitle', '$courseCredit', '$lab', '$courseFaculty', '$courseSection')";
-                    mysqli_query($conn, $insertSql);
-
                     $removeSql = "DELETE from selected_courses where section = '$courseSection' and course_id = '$courseId'";
                     mysqli_query($conn, $removeSql);
 

@@ -59,7 +59,596 @@
                 </select>
             </form>
         </div>
+
     </div>
-    
+    <div class="advising_panel2 container d-flex justify-content-around w-100 h-50">
+        <h5 class="card-title">Routine</h5>
+        <div class="table-responsive">
+            <table class='table table-striped table-bordered table-hover'>
+                <thead>
+                    <tr>
+                        <th scope="col" class="entry">Time/Day</th>
+                        <th scope="col" class="days">Sunday</th>
+                        <th scope="col" class="days">Monday</th>
+                        <th scope="col" class="days">Tuesday</th>
+                        <th scope="col" class="days">Wednesday</th>
+                        <th scope="col" class="days">Thursday</th>
+                        <th scope="col" class="days">Friday</th>
+                        <th scope="col" class="days">Saturday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="time">08:00 AM-09:20 AM</th>
+                        <td class="courses">
+                            <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('08:00:00' AS time) and day = 2");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }
+                                else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('08:00:00' AS time) and day = 3");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('08:00:00' AS time) and day = 4");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('08:00:00' AS time) and day = 5");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('08:00:00' AS time) and day = 6");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('08:00:00' AS time) and day = 7");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('08:00:00' AS time) and day = 1");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="time">09:30 AM-10:50 AM</th>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('09:30:00' AS time) and day = 2");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('09:30:00' AS time) and day = 3");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('09:30:00' AS time) and day = 4");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('09:30:00' AS time) and day = 5");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('09:30:00' AS time) and day = 6");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('09:30:00' AS time) and day = 7");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('09:30:00' AS time) and day = 1");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="time">11:00 AM-12:20 AM</th>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('11:00:00' AS time) and day = 2");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('11:00:00' AS time) and day = 3");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('11:00:00' AS time) and day = 4");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('11:00:00' AS time) and day = 5");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('11:00:00' AS time) and day = 6");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('11:00:00' AS time) and day = 7");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('11:00:00' AS time) and day = 1");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="time">12:30 AM-01:50 AM</th>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('12:30:00' AS time) and day = 2");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('12:30:00' AS time) and day = 3");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('12:30:00' AS time) and day = 4");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('12:30:00' AS time) and day = 5");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('12:30:00' AS time) and day = 6");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('12:30:00' AS time) and day = 7");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('12:30:00' AS time) and day = 1");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="time">02:00 AM-03:20 AM</th>  
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('02:00:00' AS time) and day = 2");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('02:00:00' AS time) and day = 3");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('02:00:00' AS time) and day = 4");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('02:00:00' AS time) and day = 5");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('02:00:00' AS time) and day = 6");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('02:00:00' AS time) and day = 7");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('02:00:00' AS time) and day = 1");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="time">03:30 AM-04:50 AM</th>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('03:30:00' AS time) and day = 2");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('03:30:00' AS time) and day = 3");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('03:30:00' AS time) and day = 4");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('03:30:00' AS time) and day = 5");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('03:30:00' AS time) and day = 6");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('03:30:00' AS time) and day = 7");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                        <td class="courses">
+                        <?php
+                                $searchSql = mysqli_query($conn, "SELECT course_title FROM selected_courses WHERE time = CAST('03:30:00' AS time) and day = 1");
+                                $courseTime = mysqli_fetch_assoc($searchSql);
+                                if(mysqli_num_rows($searchSql) == 0){
+                                echo '';
+                                }else if(mysqli_num_rows($searchSql) > 1){
+                                    echo '<script>alert("Schedule Clash!")</script>';
+                                }else{
+                                    echo $courseTime['course_title'];
+                                } 
+                            ?>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <?php foreach($selectedCourses as $selectedCourse): ?>
+            
+        <?php endforeach; ?>
+    </div>
 </body>
 </html>

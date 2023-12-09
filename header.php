@@ -12,11 +12,12 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="icon" href="./images/logo6.png" type="image/x-icon">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
-        <a class="navbar-brand ml-5" href="#"><img src="./images/logo.png" alt="advising logo"></a>
+        <a class="navbar-brand ml-5" href="#"><img src="./images/logo6.png" alt="advising logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -48,7 +48,7 @@
             
             ?>
 
-                <header>Student SignUp</header>
+                <header class="align-self-center">Student SignUp</header>
                 <form action="" method="post">
                     <div class="field input">
                         <!-- <label for="Student_id">Enter Student ID</label> -->
@@ -88,14 +88,14 @@
                         <!-- <label for="password">Enter Password</label> -->
                         <input type="password" name="password" id="password" autocomplete="off" placeholder="Password" required>
                     </div>
-
+                    <div class="links">
+                        Already a member? <a href="student_login.php">Log In</a>
+                    </div>
                     <div class="field button">
                         <input type="submit" class="btn" name="submit" value="Submit" required>
                     </div>
 
-                    <div class="links">
-                        Already a member? <a href="student_login.php">Log In</a>
-                    </div>
+                    
                 </form>
             <?php } ?>
       </div>

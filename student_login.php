@@ -110,11 +110,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="mb-3">
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
+                <div class="links align-self-start">
+                        Not Registered? <a href="student_Signup.php">Sign Up</a>
+                </div>
                 <div class="field button">
                         <input type="submit" class="btn" name="submit" value="Submit" required>
-                </div>
-                <div class="links">
-                        Not Registered? <a href="student_Signup.php">Sign Up</a>
                 </div>
             </form>
         </div>

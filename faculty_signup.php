@@ -10,7 +10,7 @@
 <body>
 <div class="container">
         <div class="box form-box">
-            <header>Faculty SignUp</header>
+            <header class="align-self-center">Faculty SignUp</header>
             <form id="facultyForm" method="post" action="fdata_insert.php">
                 <div class="field input">
                     <input type="text" name="faculty_id" id="faculty_id" autocomplete="off" placeholder="Faculty ID" required>
@@ -27,13 +27,13 @@
                 <div class="field input">
                     <input type="password" name="password" id="password" autocomplete="off" placeholder="Password" required>
                 </div>
-
-                <div class="field button">
-                    <input type="submit" class="btn" name="submit" value="Submit" required>
-                </div>
                 <div class="links">
                     Already a member? <a href="faculty_login.php">Log In</a>
                 </div>
+                <div class="field button">
+                    <input type="submit" class="btn" name="submit" value="Submit" required>
+                </div>
+                
             </form> 
       </div>
     </div>

@@ -15,11 +15,11 @@ $pdo = new PDO($dsn, $user, $pass, $opt);
 
 $sql = 'SELECT * FROM courses';
 if (isset($_GET['course_id'])) {
-    $sql .= ' WHERE course_id = :course_id';
+    $sql .= ' WHERE course_id LIKE :course_id';
 }
 $stmt = $pdo->prepare($sql);
 if (isset($_GET['course_id'])) {
-    $stmt->execute(['course_id' => $_GET['course_id']]);
+    $stmt->execute(['course_id' => $_GET['course_id'] . '%']);
 } else {
     $stmt->execute();
 }

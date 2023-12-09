@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="submit" class="btn" name="submit" value="Submit" required>
                 </div>
                 <div class="links">
-                        Already a member? <a href="student_login.php">Log In</a>
+                        Not Registered? <a href="student_Signup.php">Sign Up</a>
                 </div>
             </form>
         </div>

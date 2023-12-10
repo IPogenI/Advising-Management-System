@@ -94,8 +94,6 @@
                     <div class="field button">
                         <input type="submit" class="btn" name="submit" value="Submit" required>
                     </div>
-
-                    
                 </form>
             <?php } ?>
       </div>

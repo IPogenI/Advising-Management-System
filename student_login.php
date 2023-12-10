@@ -17,7 +17,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_num_rows($result) == 1) {
         // Login successful
-       header("location: studentDashboard.php");
+    //    $tableSQL= "SELECT 1 from `$stId`";
+    //    $tableCheck = mysqli_query($conn, $tableSQL );
+    //    if (!$tableCheck)
+    //    {
+    //     echo "Table doesn't Exists <br/>";
+    //    } else
+    //    {
+    //     echo "Table doesn not exists <br/>";
+    //    }
+       $updateLogged = "UPDATE student SET logged = 1 WHERE student_id = '$stId'";
+       mysqli_query($conn, $updateLogged);
+       header("location: student_dashboard_1.php");
         exit();
     } else {
         $loginError = "Invalid credentials. Please try again.";

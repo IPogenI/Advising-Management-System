@@ -1,5 +1,5 @@
 <?php include 'partial/_DBconnect.php'; 
- $qry =mysqli_query($conn,"select * from student where logged = 1");
+ $qry = mysqli_query($conn,"select * from student where logged = 1");
 
  /*
  if(mysqli_num_rows($qry)=0){
@@ -10,12 +10,12 @@
 ?>
 
 <?php 
-    /*if(isset($_POST['submit'])){ 
-    mysqli_query($conn, "UPDATE student SET logged = 0 WHERE student_id = '$std_info[student_id]'");
-    header("location: student_login.php");
+    if(isset($_POST['submit'])){
+        mysqli_query($conn, "UPDATE student SET logged = 0 WHERE student_id = '$std_info[student_id]'");
+        header("location: student_login.php");
         exit();
-    }*/
-    ?>
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,7 +102,9 @@
             }
             */?>
     <div class="field button">
-        <input type="submit" class="btn" name="submit" value="Submit" required>
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+            <input type="submit" class="btn" name="submit" value="Log Out" required>
+        </form>
     </div>
 
 

@@ -19,6 +19,10 @@ nav{
     background: white;
 }
 
+a{
+    color: white;
+}
+
 .navbar{
     padding: 2.2rem 2rem !important;
 }

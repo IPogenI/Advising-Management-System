@@ -1,31 +1,26 @@
 <?php
-include 'partial/_DBconnect.php'; ?>
+include 'partial/_DBconnect.php'; 
+include 'header.php'; 
+?>
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //here we are connecting the database through the _DBconnect file
-    $stId = $_POST["faculty_id"];
+    $facId = $_POST["faculty_id"];
     $password = $_POST["password"];
     $email = $_POST["email"];
 
     //sql query here table name: faculty // modify as per needed 
-    $sql = "SELECT * FROM // facultylogininfo //// WHERE faculty_id='$stId' AND password='$password' AND email='$email'";
+    $sql = "SELECT * FROM faculty WHERE faculty_id='$facId' AND password='$password' AND email='$email'";
 
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) == 1) {
-        //checking whether only one row exists or not
         // Login successful
-//        session_start();
-//        $_SESSION['loggedin'] = true;
-//        $_SESSION['id'] = $stId;
-//        header("location: faculty_dashboard.php");
-        echo "YES!";
-        // add the location of the page where u want this page to redirect if login is a success; modify the header as per need 
+        header("location: faculty_dashboard.php");
         exit();
     } else {
         $loginError = "Invalid credentials. Please try again.";
-        echo "NO!";
     }
 } 
 ?>
@@ -41,43 +36,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-        body {
-            background-color: #ffffff;
-            /* White background for the body */
+        body {  
+            background: #e4e9f7; /* White background for the body */
+            overflow: hidden;
+        }
+
+        .container{
+            padding-top: 7.5rem;
         }
 
         .login-container {
-            background-color: #e0e0e0;
-            /* Light ash color for the login container */
+            background-color: #fff; /* Light ash color for the login container */
             border-radius: 8px;
             padding: 40px;
             margin: auto;
-            margin-top: 100px;
-            /* Adjust the top margin for centering */
-            width: 350px;
+            margin-top: 100px; /* Adjust the top margin for centering */
+            width: 450px;
             text-align: center;
+            min-height: 400px;
+            border-radius: 20px;
+            box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
         }
-
         .login-container h1 {
-            color: #000000;
-            /* Black font for "Student Login" */
+            color: #000000; /* Black font for "Student Login" */
             font-size: 25px;
+            margin-bottom: 1rem;
         }
-
         .form-control {
-    background-color: #ffffff;
-    color: #e9e9e9; /* Added a semicolon */
-    margin-bottom: 15px; /* Corrected margin-bottom value */
-    border-radius: 20px; /* Corrected border-radius value */
-}
-
-
-        .btn-primary {
-            background-color: #007bff;
-            /* Blue color for the submit button */
-            color: #ffffff;
-            /* White font for the submit button */
-            border-radius: 15px;
+            background-color: #ffffff; /* White background for form inputs */
+            color:#e9e9e9; /* Ash color for form input text */
+            /* margin-bottom #007bff: 15px; */
+            /* border-radius #007bff: 20px; */
+            padding: 1.3rem;
+        }
+        .btn-blue {
+            align-self: center;
+            background: rgba(49, 92, 242, 71%) !important; /* Blue color for the submit button */
+            color: #ffffff; /* White font for the submit button */
+            border-radius: 5px;
+            width: fit-content;
         }
     </style>
 </head>
@@ -103,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="faculty_id" name="Faculty Name" placeholder="Faculty Name">
+                    <input type="text" class="form-control" id="faculty_id" name="faculty_id" placeholder="Faculty ID">
                 </div>
                 <div class="mb-3">
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email">
@@ -111,7 +109,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="mb-3">
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="links">
+                    Not Registered? <a href="faculty_signup.php">Sign Up</a>
+                </div>
+                <div class="field button">
+                    <input type="submit" class="btn btn-blue" name="submit" value="Submit" required>
+                </div>
             </form>
         </div>
     </div>
@@ -128,5 +131,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

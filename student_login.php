@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //    }
        $updateLogged = "UPDATE student SET logged = 1 WHERE student_id = '$stId'";
        mysqli_query($conn, $updateLogged);
+       header("location: advising_panel.php");
         exit();
     } else {
         $loginError = "Invalid credentials. Please try again.";

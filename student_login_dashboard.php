@@ -1,8 +1,21 @@
 <?php include 'partial/_DBconnect.php'; 
  $qry =mysqli_query($conn,"select * from student where logged = 1");
+
+ /*
+ if(mysqli_num_rows($qry)=0){
+    header("location: student_login.php");
+        }
  $std_info = mysqli_fetch_assoc($qry);
+ */
 ?>
 
+<?php 
+    /*if(isset($_POST['submit'])){ 
+    mysqli_query($conn, "UPDATE student SET logged = 0 WHERE student_id = '$std_info[student_id]'");
+    header("location: student_login.php");
+        exit();
+    }*/
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,12 +94,16 @@
         <td><?php echo 25000+5000+3000+7000+$x*20000;?>TK</td>
     </tr>
     </table>
-    <?php
+    <?php /*
     if($x=0 ){
                 echo "
                         <p>You Have not taken any courses!</p> <br>";
                 echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
-            }?>
+            }
+            */?>
+    <div class="field button">
+        <input type="submit" class="btn" name="submit" value="Submit" required>
+    </div>
 
 
 </body>

@@ -4,9 +4,9 @@
  /*
  if(mysqli_num_rows($qry)=0){
     header("location: student_login.php");
-        }
+        }*/
  $std_info = mysqli_fetch_assoc($qry);
- */
+ 
 ?>
 
 <?php 

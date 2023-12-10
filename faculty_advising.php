@@ -1,4 +1,6 @@
 <?php
+include("header.php");
+
 $host = 'localhost';
 $db   = 'advisingmanagement';
 $user = 'root'; 
@@ -50,11 +52,10 @@ $students_approved = $stmt->fetchAll();
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             background: #e4e9f7;
             flex-direction: column;
         }
-        nav{
+        /* nav{
             position: fixed;
             top: 0;
             left: 0;
@@ -75,7 +76,7 @@ $students_approved = $stmt->fetchAll();
             text-decoration: none;
             margin-left: 20px;
             color: black;
-        }
+        } */
         .tables-container{
             display: flex;
             justify-content: space-between;
@@ -124,12 +125,12 @@ $students_approved = $stmt->fetchAll();
     </style>
 </head>
 <body>
-    <nav>
+    <!-- <nav>
         <div class="links">
             <a href="faculty_advising.php">Advising</a>
             <a href="faculty_info.php">Profile</a>
         </div>
-    </nav>
+    </nav> -->
     <div class="tables-container">
         <div>
             <h1>Approval Pending</h1>

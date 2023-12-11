@@ -93,7 +93,7 @@ if (isset($_POST['submit'])) {
             </ul>
             <ul class="navbar-nav mr-2">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         SignUp
                     </a>
@@ -103,9 +103,9 @@ if (isset($_POST['submit'])) {
                     </div>
                 </li>
             </ul>
-            <ul class="navbar-nav mr-2">
+            <ul class="navbar-nav mr-2 ">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Login
                     </a>
@@ -161,6 +161,9 @@ if (isset($_POST['submit'])) {
     <?php
     $crs_qry = mysqli_query($conn, "SELECT * FROM selected_courses where student_id = '$std_info[student_id]'");
     ?>
+    <div class="container-fluid d-flex justify-content-end pr-5">
+        <h5 class="card-title align-self-end">Welcome, <?php echo $std_info['name']; ?></h5>
+    </div>
     <div class="container d-flex flex-column">
         <h5 class="card-title align-self-center">Advised Courses</h5>
         <table class='table table-striped table-bordered table-hover' name="Payslip">

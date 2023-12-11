@@ -39,9 +39,6 @@
                         <p>Registration successfully!</p>
                     </div> <br>";
                 echo "<a href='index.php'><button class='btn'>Login Now</button>";
-                
-                //header("location: student_login.php");
-
             }
 
             }else{
@@ -51,41 +48,17 @@
                 <header class="align-self-center">Student SignUp</header>
                 <form action="" method="post">
                     <div class="field input">
-                        <!-- <label for="Student_id">Enter Student ID</label> -->
                         <input type="text" name="stId" id="student_id" autocomplete="off" placeholder="Student ID" required>
                     </div>
 
                     <div class="field input">
-                        <!-- <label for="Student_name">Enter Student Name</label> -->
                         <input type="text" name="name" id="student_name" autocomplete="off" placeholder="Name" required>
                     </div>
 
                     <div class="field input">
-                        <!-- <label for="student_mail">Enter Email</label> -->
                         <input type="text" name="email" id="email" autocomplete="off" placeholder="Email" required>
                     </div>
-
-                    <!--
-                    <div>
-
-
-                    <select name ="Student_department">
-                        <label for="Student_department">Department</label>
-                        <?php 
-                            // $dept = mysqli_query($con,"select * from department order by D_id");
-                            // while($dpt = mysqli_fetch_array($dept)){
-                        ?>
-                        <option value= "<?php // echo $dpt['D_id'] ?>"><?php //echo $dpt['D_id'] ?></option>
-                        <?php 
-                    //} ?>
-                    </select>
-
-                    </div>
-                    -->
-
-
                     <div class="field input">
-                        <!-- <label for="password">Enter Password</label> -->
                         <input type="password" name="password" id="password" autocomplete="off" placeholder="Password" required>
                     </div>
                     <div class="links">

@@ -1,42 +1,3 @@
-<?php
-    include 'partial/_DBconnect.php';
-    include 'header.php'; 
-?>
-<?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //here we are connecting the database through the _DBconnect file
-    $stId = $_POST["student_id"];
-    $password = $_POST["password"];
-    $email = $_POST["email"];
-
-    //sql query here table name: students // modify as per needed 
-    $sql = "SELECT * FROM student WHERE student_id='$stId' AND password='$password' AND email='$email'";
-
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) == 1) {
-        // Login successful
-    //    $tableSQL= "SELECT 1 from `$stId`";
-    //    $tableCheck = mysqli_query($conn, $tableSQL );
-    //    if (!$tableCheck)
-    //    {
-    //     echo "Table doesn't Exists <br/>";
-    //    } else
-    //    {
-    //     echo "Table doesn not exists <br/>";
-    //    }
-       $updateLogged = "UPDATE student SET logged = 1 WHERE student_id = '$stId'";
-       mysqli_query($conn, $updateLogged);
-       header("location: student_login_dashboard.php");
-        exit();
-    } else {
-        $loginError = "Invalid credentials. Please try again.";
-    }
-} 
-?>
-
-<!-- html and css code here  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,15 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     </style>
 </head>
-
 <body class="d-flex flex-column min-vh-100">
-
-    <div class="container my-4">
-            <h1>This is homepage</h1>
-    </div>
-
-    
-
+  <div class="container my-4">
+   <h1>This is homepage</h1>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

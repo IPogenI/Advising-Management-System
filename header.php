@@ -56,7 +56,7 @@
                         Login
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="student_login.php">Student</a>
+                        <a class="dropdown-item" href="index.php">Student</a>
                         <a class="dropdown-item" href="faculty_login.php">Faculty</a>
                     </div>
                 </li>

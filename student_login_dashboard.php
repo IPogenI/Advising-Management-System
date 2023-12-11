@@ -4,11 +4,6 @@ $searchSql = "select * from student where advising_stat = '1' and logged = '1' a
 $permission = mysqli_query($conn, $searchSql);
 $searchSql = "select * from student where advising_stat = '1' and logged = '1'";
 $permission2 = mysqli_query($conn, $searchSql);
-
-/*
-if(mysqli_num_rows($qry)=0){
-   header("location: student_login.php");
-       }*/
 $std_info = mysqli_fetch_assoc($qry);
 
 ?>

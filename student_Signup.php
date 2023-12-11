@@ -64,26 +64,6 @@
                         <!-- <label for="student_mail">Enter Email</label> -->
                         <input type="text" name="email" id="email" autocomplete="off" placeholder="Email" required>
                     </div>
-
-                    <!--
-                    <div>
-
-
-                    <select name ="Student_department">
-                        <label for="Student_department">Department</label>
-                        <?php 
-                            // $dept = mysqli_query($con,"select * from department order by D_id");
-                            // while($dpt = mysqli_fetch_array($dept)){
-                        ?>
-                        <option value= "<?php // echo $dpt['D_id'] ?>"><?php //echo $dpt['D_id'] ?></option>
-                        <?php 
-                    //} ?>
-                    </select>
-
-                    </div>
-                    -->
-
-
                     <div class="field input">
                         <!-- <label for="password">Enter Password</label> -->
                         <input type="password" name="password" id="password" autocomplete="off" placeholder="Password" required>

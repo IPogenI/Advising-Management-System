@@ -153,11 +153,9 @@ if (isset($_POST['submit'])) {
     </div>
 
 
-    <!-- <div>
-        <?php //echo $std_info['student_id']; ?> <br />
-        <?php //echo $std_info['name']; ?> <br />
-        <?php //echo $std_info['email']; ?> <br />
-    </div> -->
+    <div class="align-self-center">
+        Welcome, <?php echo $std_info['name']; ?> <br />
+    </div>
     <?php
     $crs_qry = mysqli_query($conn, "SELECT * FROM selected_courses where student_id = '$std_info[student_id]'");
     ?>

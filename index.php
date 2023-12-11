@@ -96,7 +96,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="d-flex flex-column min-vh-100">
 
     <div class="container my-4">
-            <h1>This is homepage</h1>
+        <div class="login-container">
+            <h1>Student Login</h1>
+
+            <?php
+            //error handling
+            if (isset($loginError)) {
+                echo
+                    '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Error!</strong> ' . $loginError . '
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>';
+            }
+            ?>
+
+            <form class="d-flex flex-column justify-content-center" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Student ID">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="links">
+                    Not Registered? <a href="student_Signup.php">Sign Up</a>
+                </div>
+                <div class="field button">
+                    <input type="submit" class="btn btn-blue" name="submit" value="Submit" required>
+                </div>
+            </form>
+        </div>
     </div>
 
     

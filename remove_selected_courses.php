@@ -6,6 +6,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $selectedCourse = $_POST['selectedCourses']; // Assuming only one course is selected
         $selectedCourse_explode = explode(',', $selectedCourse);
 
+        $stId = mysqli_query($conn, "select student_id from student where logged = '1'");
+        $stId = mysqli_fetch_all($stId, MYSQLI_ASSOC);
+        $stId = $stId[0]['student_id'];
         // Now $courseId and $section contain the separated values
 
         $courseId = $selectedCourse_explode[0];
@@ -15,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Replace this with your actual database connection and query logic
         $selectedCourseId = mysqli_real_escape_string($conn, $courseId);
         // Assuming 'courses' table has columns 'course_id', 'course_title', 'course_credit', 'course_faculty', and 'lab'
-        $sql = "SELECT course_id, course_title, course_credit, course_faculty, section, lab FROM selected_courses WHERE course_id = '$selectedCourseId' and section = '$section'";
+        $sql = "SELECT course_id, course_title, course_credit, course_faculty, section, lab FROM selected_courses WHERE course_id = '$selectedCourseId' and section = '$section' and student_id = $stId";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {

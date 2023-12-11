@@ -40,7 +40,7 @@ $students_approved = $stmt->fetchAll();
 
 <?php 
     //Fetching Courses From Database
-    $query1 = 'select student_id, name from student where advising_done = 1';
+    $query1 = "select student_id, name from student where advising_done = 1 and approval_stat != '1'";
     $data1 = mysqli_query($conn, $query1);
     $students = mysqli_fetch_all($data1, MYSQLI_ASSOC);
 ?>
@@ -225,7 +225,10 @@ $students_approved = $stmt->fetchAll();
                 <?php endforeach; ?>
             </select>
         </form>
-        <!-- <button form="approve" type="submit" class="btn btn-blue mt-4 align-self-center">Approve</button> -->
+    </div>
+    <div class="button">
+        <button form="approve" type="submit" class="btn btn-blue mt-2">Approve</button>
+        <!-- <button form="approve" type="submit" class="btn btn-blue mt-4 align-self-center">Approve</button> -->  
     </div>
 </body>
 

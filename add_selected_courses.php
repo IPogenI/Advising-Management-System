@@ -1,3 +1,50 @@
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+        <a class="navbar-brand ml-5" href="#"><img src="./images/logo6.png" alt="advising logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end align-items-center mr-6" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-2">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="course_show.php">Courses</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-2">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        SignUp
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="student_signup.php">Student</a>
+                        <a class="dropdown-item" href="faculty_signup.php">Faculty</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-2">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.php">Student</a>
+                        <a class="dropdown-item" href="faculty_login.php">Faculty</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Handle the selected course
@@ -25,13 +72,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $time = mysqli_real_escape_string($conn, $courseDetails['time']);
         $day = mysqli_real_escape_string($conn, $courseDetails['day']);
 
-        $searchSql = mysqli_query($conn, "SELECT course_id FROM selected_courses WHERE course_id = '$courseId'");
-        $conSql = mysqli_query($conn, "select * from selected_courses"); 
+        
+        $stId = mysqli_query($conn, "select student_id from student where logged = '1'");
+        $stId = mysqli_fetch_all($stId, MYSQLI_ASSOC);
+        $stId = $stId[0]['student_id'];
+        $searchSql = mysqli_query($conn, "SELECT course_id FROM selected_courses WHERE course_id = '$courseId' and student_id = $stId");
+        $conSql = mysqli_query($conn, "select * from selected_courses where student_id = $stId"); 
 
         if(mysqli_num_rows($searchSql) == 0){
             if (mysqli_num_rows($conSql) < 4){
-                $insertSql = "INSERT INTO selected_courses (course_id, course_title, course_credit, lab, course_faculty, section, seats, time, day) 
-                VALUES ('$courseId', '$courseTitle', '$courseCredit', '$lab', '$courseFaculty', '$courseSection', '$seats', '$time', '$day')";
+                $insertSql = "INSERT INTO selected_courses (course_id, course_title, course_credit, lab, course_faculty, section, seats, time, day, student_id) 
+                VALUES ('$courseId', '$courseTitle', '$courseCredit', '$lab', '$courseFaculty', '$courseSection', '$seats', '$time', '$day', '$stId')";
                 mysqli_query($conn, $insertSql);
 
                 // Redirect or display a success message as needed

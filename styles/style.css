@@ -25,6 +25,11 @@ body{
                 0 32px 64px -48px rgba(0,0,0,0.5);
 }
 
+a{
+    color: rgba(49, 92, 242, 71%);
+    text-decoration: none !important;
+}
+
 form > .button{
     width: fit-content;
     margin: auto;

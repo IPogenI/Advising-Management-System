@@ -38,7 +38,7 @@
                 echo "<div class='message'>
                         <p>Registration successfully!</p>
                     </div> <br>";
-                echo "<a href='student_login.php'><button class='btn'>Login Now</button>";
+                echo "<a href='index.php'><button class='btn'>Login Now</button>";
                 
                 //header("location: student_login.php");
 
@@ -89,7 +89,7 @@
                         <input type="password" name="password" id="password" autocomplete="off" placeholder="Password" required>
                     </div>
                     <div class="links">
-                        Already a member? <a href="student_login.php">Log In</a>
+                        Already a member? <a href="index.php">Log In</a>
                     </div>
                     <div class="field button">
                         <input type="submit" class="btn" name="submit" value="Submit" required>

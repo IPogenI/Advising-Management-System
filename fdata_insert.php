@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
         // Redirect to faculty_login page
-        header("Location: faculty_signup.php");
+        header("Location: faculty_login.php");
       } else {
         echo "Error. User already exists: " . $sql . "<br>" . $conn->error;
         // Redirect to faculty_signup page
